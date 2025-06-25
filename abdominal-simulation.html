@@ -801,7 +801,7 @@
 
 async function loadImages() {
   try {
-    const response = await fetch(`http://localhost:5001/api/admin/media?category=${CATEGORY}&mediaType=image`, {
+    const response = await fetch(`fyp-backend-production-249b.up.railway.app/api/admin/media?category=${CATEGORY}&mediaType=image`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
@@ -811,7 +811,7 @@ async function loadImages() {
     images = data.map(img => ({
       id: img._id,
       name: img.name,
-      path: `http://localhost:5001/${img.category.toLowerCase()}/${img.filename}`,
+      path: `fyp-backend-production-249b.up.railway.app/${img.category.toLowerCase()}/${img.filename}`,
       parameters: img.parameters || {
         geometry: {
           fov: 250,
@@ -883,7 +883,7 @@ const userId = userInfo?.id;
     async function loadSavedParameters() {
   if (!userId) return;
   try {
-    const res = await fetch(`http://localhost:5001/api/parameters/student/${userId}`);
+    const res = await fetch(`fyp-backend-production-249b.up.railway.app/api/parameters/student/${userId}`);
     const saved = await res.json();
 
     if (Array.isArray(saved)) {
@@ -1205,7 +1205,7 @@ function getOverlayDataForImage(imageId) {
   selectedImage.parameters = parameters;
 
   try {
-    await fetch('http://localhost:5001/api/parameters/save', {
+    await fetch('fyp-backend-production-249b.up.railway.app/api/parameters/save', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -1360,7 +1360,7 @@ function getOverlayDataForImage(imageId) {
                 sequenceType: currentParams.sequence.pulseSequence
             });
 
-            const response = await fetch('http://localhost:5001/api/assistant/chat', {
+            const response = await fetch('fyp-backend-production-249b.up.railway.app/api/assistant/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -1398,7 +1398,7 @@ function getOverlayDataForImage(imageId) {
 
   async function loadNotifications() {
   const token = localStorage.getItem('token');
-  const res = await fetch('http://localhost:5001/api/lecturer/student/notifications', {
+  const res = await fetch('fyp-backend-production-249b.up.railway.app/api/lecturer/student/notifications', {
     headers: { 'Authorization': `Bearer ${token}` }
   });
   const notes = await res.json();

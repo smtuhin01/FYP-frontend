@@ -497,7 +497,7 @@
       const tableBody = document.getElementById('lecturerTableBody');
       
       try {
-        const response = await fetch('http://localhost:5001/api/admin/lecturers', {
+        const response = await fetch('fyp-backend-production-249b.up.railway.app/api/admin/lecturers', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         
@@ -660,7 +660,7 @@
           }
 
           // Request lecturer portal access
-          const response = await fetch('http://localhost:5001/api/admin/lecturer-portal-access', {
+          const response = await fetch('fyp-backend-production-249b.up.railway.app/api/admin/lecturer-portal-access', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -725,7 +725,7 @@
       const token = localStorage.getItem('adminToken');
       
       try {
-        const response = await fetch(`http://localhost:5001/api/admin/lecturers/${id}`, {
+        const response = await fetch(`fyp-backend-production-249b.up.railway.app/api/admin/lecturers/${id}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         
@@ -768,7 +768,7 @@
       
       try {
         const token = localStorage.getItem('adminToken');
-        const response = await fetch('http://localhost:5001/api/admin/lecturers', {
+        const response = await fetch('fyp-backend-production-249b.up.railway.app/api/admin/lecturers', {
           method: 'POST',
           headers: { 
             'Content-Type': 'application/json',
@@ -820,7 +820,7 @@
       
       try {
         const token = localStorage.getItem('adminToken');
-        const response = await fetch(`http://localhost:5001/api/admin/lecturers/${id}`, {
+        const response = await fetch(`fyp-backend-production-249b.up.railway.app/api/admin/lecturers/${id}`, {
           method: 'PUT',
           headers: { 
             'Content-Type': 'application/json',
@@ -867,7 +867,7 @@
       
       try {
         const token = localStorage.getItem('adminToken');
-        const response = await fetch(`http://localhost:5001/api/admin/lecturers/${id}`, {
+        const response = await fetch(`fyp-backend-production-249b.up.railway.app/api/admin/lecturers/${id}`, {
           method: 'DELETE',
           headers: { 'Authorization': `Bearer ${token}` }
         });

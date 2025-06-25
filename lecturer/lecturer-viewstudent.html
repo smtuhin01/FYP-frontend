@@ -228,7 +228,7 @@
     
     async function fetchStudentInfo() {
       try {
-        const res = await fetch(`http://localhost:5001/api/lecturer/student/${studentId}`, {
+        const res = await fetch(`fyp-backend-production-249b.up.railway.app/api/lecturer/student/${studentId}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         return await res.json();
@@ -240,7 +240,7 @@
 
     async function fetchStudentImages() {
       try {
-        const res = await fetch(`http://localhost:5001/api/parameters/student/${studentId}`, {
+        const res = await fetch(`fyp-backend-production-249b.up.railway.app/api/parameters/student/${studentId}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         return await res.json();
@@ -368,7 +368,7 @@
       // Medical image
       const img = document.createElement('img');
       img.className = 'medical-image';
-      img.src = `http://localhost:5001/cardic/${data.imageName.replace(/ /g, '_')}_thumb.jpg`;
+      img.src = `fyp-backend-production-249b.up.railway.app/cardic/${data.imageName.replace(/ /g, '_')}_thumb.jpg`;
       img.alt = data.imageName;
       img.onerror = () => {
         img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZWVlIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIiBmaWxsPSIjOTk5Ij5JbWFnZSBOb3QgRm91bmQ8L3RleHQ+PC9zdmc+';
@@ -468,7 +468,7 @@
         submitButton.disabled = true;
         submitButton.innerHTML = '<svg class="animate-spin h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Submitting...';
         
-        const res = await fetch('http://localhost:5001/api/lecturer/comment', {
+        const res = await fetch('fyp-backend-production-249b.up.railway.app/api/lecturer/comment', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

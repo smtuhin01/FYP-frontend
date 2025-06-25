@@ -288,7 +288,7 @@
     async function fetchStudents() {
       const token = localStorage.getItem('lecturerToken');
       try {
-        const res = await fetch('http://localhost:5001/api/lecturer/students', {
+        const res = await fetch('fyp-backend-production-249b.up.railway.app/api/lecturer/students', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const students = await res.json();
