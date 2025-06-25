@@ -267,8 +267,8 @@
 
     try {
       const [studentsRes, lecturersRes] = await Promise.all([
-        fetch('fyp-backend-production-249b.up.railway.app/api/admin/students', { headers }),
-        fetch('fyp-backend-production-249b.up.railway.app/api/admin/lecturers', { headers })
+        fetch('https://fyp-backend-production-249b.up.railway.app:5001/api/admin/students', { headers }),
+        fetch('https://fyp-backend-production-249b.up.railway.app:5001/api/admin/lecturers', { headers })
       ]);
 
       if (studentsRes.ok) {

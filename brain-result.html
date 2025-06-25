@@ -49,7 +49,7 @@
   // Load videos from API
   async function loadVideos() {
     try {
-      const response = await fetch(`fyp-backend-production-249b.up.railway.app/api/admin/media?category=${CATEGORY}&mediaType=video`, {
+      const response = await fetch(`https://fyp-backend-production-249b.up.railway.app:5001/api/admin/media?category=${CATEGORY}&mediaType=video`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -60,7 +60,7 @@
       const data = await response.json();
       videoData = data.map(video => ({
         id: video._id,
-        path: `fyp-backend-production-249b.up.railway.app/Video/${video.filename}`,
+        path: `https://fyp-backend-production-249b.up.railway.app:5001/Video/${video.filename}`,
         name: video.name,
         duration: video.duration || "03m 00s",
         quality: video.quality || "High"

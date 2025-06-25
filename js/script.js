@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const signupForm = document.getElementById('signup-form');
   const forgotForm = document.getElementById('forgot-password-form');
   const resetPasswordForm = document.getElementById('reset-password-form'); 
-  const API_BASE_URL = 'fyp-backend-production-249b.up.railway.app'; 
+  const API_BASE_URL = 'https://fyp-backend-production-249b.up.railway.app'; 
 
   if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       try {
-        const response = await fetch('fyp-backend-production-249b.up.railway.app/api/auth/signup', {
+        const response = await fetch('https://fyp-backend-production-249b.up.railway.app:5001/api/auth/signup', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

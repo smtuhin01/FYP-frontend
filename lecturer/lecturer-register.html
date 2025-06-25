@@ -210,7 +210,7 @@
       }
       
       try {
-        const res = await fetch('fyp-backend-production-249b.up.railway.app/api/lecturer/register', {
+        const res = await fetch('https://fyp-backend-production-249b.up.railway.app:5001/api/lecturer/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, email, password })
