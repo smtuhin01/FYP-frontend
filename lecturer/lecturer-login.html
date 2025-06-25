@@ -147,7 +147,7 @@
       const alertMessage = document.getElementById('alertMessage');
       
       try {
-        const res = await fetch('https://fyp-backend-production-249b.up.railway.app:5001/api/lecturer/login', {
+        const res = await fetch('http://localhost:5001/api/lecturer/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -158,7 +158,7 @@
         const data = await res.json();
         if (res.ok) {
           localStorage.setItem('lecturerToken', data.token);
-          window.location.href = 'lecturer-dashboard.html';
+          window.location.href = './lecturer-dashboard.html';
         } else {
           alertMessage.textContent = data.message || 'Invalid credentials. Please try again.';
           alertMessage.classList.remove('hidden');

@@ -1314,7 +1314,7 @@ function getOverlayDataForImage(imageId) {
   
   // Delay navigation by 1.5s so user sees modal
   setTimeout(() => {
-    window.location.href = "simulationResult.html";
+    window.location.href = "./simulationResult.html";
   }, 1500);
 });
 
@@ -1322,7 +1322,7 @@ function getOverlayDataForImage(imageId) {
 
       logoutBtn.addEventListener('click', () => {
   localStorage.removeItem('token'); // Clear saved token
-  window.location.href = 'login.html'; // Redirect to login page
+  window.location.href = './login.html'; // Redirect to login page
 });
 
       
